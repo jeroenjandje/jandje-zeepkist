@@ -25,6 +25,19 @@ services:
     depends_on:
       - database
 
+  node:
+    container_name: node
+    build:
+      dockerfile: ./docker/node/Dockerfile
+    restart: always
+    ports:
+      - '8000:8080'
+    networks:
+      - vue-network
+    depends_on:
+      - php
+      - database
+
   nginx:
     container_name: nginx
     image: nginx:stable-alpine
@@ -59,3 +72,7 @@ volumes:
 ###> doctrine/doctrine-bundle ###
   database_data:
 ###< doctrine/doctrine-bundle ###
+
+networks:
+  vue-network:
+    driver: bridge
