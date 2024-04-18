@@ -3,8 +3,10 @@
 namespace App\Entity;
 
 use App\Repository\ZeepPlayerRepository;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
+#[ORM\Table(name: "zeepplayers")]
 #[ORM\Entity(repositoryClass: ZeepPlayerRepository::class)]
 class ZeepPlayer
 {
@@ -15,6 +17,9 @@ class ZeepPlayer
 
     #[ORM\Column(length: 255)]
     private ?string $username = null;
+
+    #[ORM\OneToMany(targetEntity: ZeepLevelVote::class, mappedBy: "zeepLevel")]
+    private Collection $zeepLevelVotes;
 
     public function getId(): ?int
     {
