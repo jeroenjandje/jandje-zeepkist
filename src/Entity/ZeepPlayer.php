@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ZeepPlayerRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Table(name: "zeepplayers")]
 #[ORM\Entity(repositoryClass: ZeepPlayerRepository::class)]
@@ -14,6 +15,14 @@ class ZeepPlayer
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+
+    #[ORM\Column(type: "string")]
+    #[Assert\NotBlank]
+    private string $steamID;
+
+    #[ORM\Column(type: "string")]
+    #[Assert\NotBlank]
+    private string $playerID;
 
     #[ORM\Column(length: 255)]
     private ?string $username = null;
