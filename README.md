@@ -1,5 +1,14 @@
 # jandje-zeepkist
 
+## Build / deploy process
+- [ ] apt update
+- [ ] install php
+- [ ] install / enable php extensions (ext-xml,)
+- [ ] apt install nginx
+- [ ] configure nginx if needed
+- [ ] apt install mariadb-server
+- [ ] configure mariadb if needed
+- [ ] composer install
 
 ## TO-DO
 - [ ] Complete model data
