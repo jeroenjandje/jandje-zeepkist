@@ -11,6 +11,8 @@
 - [ ] composer install
 
 ## TO-DO
+- [ ] zkx.jandje.nl -> /public
+- [ ] Symfony setup stuff
 - [ ] Complete model data
   - [ ] ZeepCup
   - [ ] ZeepLevel
