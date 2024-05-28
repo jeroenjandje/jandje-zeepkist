@@ -3,6 +3,7 @@
 namespace App\Controller\API;
 
 use App\Repository\ZeepLevelRepository;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
 
 class ZeepLevelAPIController extends AbstractAPIController
@@ -15,7 +16,7 @@ class ZeepLevelAPIController extends AbstractAPIController
     public function index(ZeepLevelRepository $zeepLevelRepository)
     {
         $data = $zeepLevelRepository->findAll();
-        return $this->json($data, 200, ["Content-Type" => "application/json"]);
+        return new JsonResponse(['data' => $data, 'status' => 200, 'headers' => ["Content-Type" => "application/json"]]);
     }
 
     #[Route(

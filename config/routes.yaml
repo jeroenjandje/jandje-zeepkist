@@ -8,5 +8,5 @@ api:
     resource:
         path: ../src/Controller/API/
         namespace: App\Controller\API
-    prefix: /api
+    prefix: /api/v1
     type: attribute
